@@ -21,10 +21,10 @@ python src/main.py --channels sample_data/context --target sample_data/individua
 ## Methods
 This tool uses stylometry to identify authors. It extracts 3 feature types: character n-grams, word n-grams, and function word frequencies. The features are vectorized using TF-IDF and combined into single feature vector for each "user". The similarity between the target document(s) and each user is calculated using Cosine Similarity.
 
-## Considerations
+# Considerations
 This tool provides probabilistic evidence, not definitive proof. The results are intended to a be a starting point for further qualitative investigation and not a final conclusion. The underlying methodology has multiple important limitations that must be understood to interpret results responsibly.
 
-# Technical and Methodological Limitations
+## Technical and Methodological Limitations
 Topic Influence vs Stylistic Signaling: The TF-IDF vectorizer is effective at finding vocabulary patterns but often struggles to distinguish between unique writing style and unique topic of discussion. If a niche subject is frequently discussed (like a specific programming library) and the target document is about the same subject then the similarity score will likely be inflated due to shared vocabulary and not just writing style.
 Feature Scope: The model uses a combination of linguistic n-grams and function frequencies but it doesn't capture all aspects of an author's style like sentence complexity and punctuation habits or spelling errors.
 Relative Scoring: Similarity scores are not absolute probabilities and are only meaningful when compared to one another within the same analysis. The difference between the top-ranked user and the runners-up can indicate whether multiple users have a similar profile according to the methodology.
