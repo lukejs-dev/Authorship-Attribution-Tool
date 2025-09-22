@@ -1,0 +1,10 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd 
+env/
+venv/
+pip-selfcheck.json
+
+# Data (TODO: remember to delete testing data from local repo)
